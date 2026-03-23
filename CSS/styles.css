@@ -1607,7 +1607,7 @@ section .container-fluid .row .col-sm-12 {
 section .container-fluid .row .col-sm-12 video {
   width: 100%;
   display: block;
-  /* margin: 0; */
+  margin: 0;
 }
 
 /* Keep your existing video controls hiding rules */
@@ -1619,7 +1619,3 @@ video.lazy-video::-webkit-media-controls-overlay-play-button,
 video.lazy-video::-webkit-media-controls-play-button {
   display: none !important;
 }
-/* 
-.video2 , .video7{
-margin-top: -2px;
-} */
