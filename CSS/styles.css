@@ -1548,3 +1548,13 @@ html, body {
 video {
   display: block;
 }
+
+.nav a,
+.nav li {
+  pointer-events: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
