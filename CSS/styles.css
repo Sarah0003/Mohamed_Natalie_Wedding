@@ -915,12 +915,12 @@ video {
 @media (min-width: 320px) and (max-width: 480px) {
 
   .rsvp img {
-    width: 80%;
+    width: 55%;
   }
 
   .rsvp {
-    top: 49%;
-    left: 18%;
+    top: 51%;
+    left: 28%;
   }
 
   .get img {
@@ -1078,6 +1078,46 @@ video {
     padding-left: 1rem;
 
   }
+
+  section .container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+  }
+
+  section .container-fluid .row {
+    margin: 0;
+    width: 100%;
+  }
+
+  section .container-fluid .row .col-sm-12 {
+    padding: 0;
+  }
+
+  section .container-fluid .row .col-sm-12 video {
+    width: 100%;
+    display: block;
+    margin: 0;
+    margin-top: -1px;
+
+  }
+
+  /* Keep your existing video controls hiding rules */
+  video.lazy-video::-webkit-media-controls,
+  video.lazy-video::-webkit-media-controls-enclosure,
+  video.lazy-video::-webkit-media-controls-panel,
+  video.lazy-video::-webkit-media-controls-start-playback-button,
+  video.lazy-video::-webkit-media-controls-overlay-play-button,
+  video.lazy-video::-webkit-media-controls-play-button {
+    display: none !important;
+  }
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -1085,13 +1125,14 @@ video {
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+
   .rsvp img {
-    width: 80%;
+    width: 55%;
   }
 
   .rsvp {
-    top: 49%;
-    left: 18%;
+    top: 51%;
+    left: 28%;
   }
 
   .get img {
@@ -1229,6 +1270,50 @@ video {
 
   .our-story-video {
     width: 80%;
+  }
+
+
+
+
+
+  section .container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+  }
+
+  section .container-fluid .row {
+    margin: 0;
+    width: 100%;
+  }
+
+  section .container-fluid .row .col-sm-12 {
+    padding: 0;
+  }
+
+  section .container-fluid .row .col-sm-12 video {
+    width: 100%;
+    display: block;
+    margin: 0;
+    margin-top: -1px;
+
+  }
+
+  /* Keep your existing video controls hiding rules */
+  video.lazy-video::-webkit-media-controls,
+  video.lazy-video::-webkit-media-controls-enclosure,
+  video.lazy-video::-webkit-media-controls-panel,
+  video.lazy-video::-webkit-media-controls-start-playback-button,
+  video.lazy-video::-webkit-media-controls-overlay-play-button,
+  video.lazy-video::-webkit-media-controls-play-button {
+    display: none !important;
   }
 }
 
@@ -1580,44 +1665,4 @@ video.lazy-video {
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-}
-
-section .container-fluid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-}
-
-.video-container {
-  position: relative;
-  width: 100%;
-}
-
-section .container-fluid .row {
-  margin: 0;
-  width: 100%;
-}
-
-section .container-fluid .row .col-sm-12 {
-  padding: 0;
-}
-
-section .container-fluid .row .col-sm-12 video {
-  width: 100%;
-  display: block;
-  margin: 0;
-  margin-top: -2px;
-
-}
-
-/* Keep your existing video controls hiding rules */
-video.lazy-video::-webkit-media-controls,
-video.lazy-video::-webkit-media-controls-enclosure,
-video.lazy-video::-webkit-media-controls-panel,
-video.lazy-video::-webkit-media-controls-start-playback-button,
-video.lazy-video::-webkit-media-controls-overlay-play-button,
-video.lazy-video::-webkit-media-controls-play-button {
-  display: none !important;
 }
