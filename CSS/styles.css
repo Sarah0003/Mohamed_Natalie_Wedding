@@ -1551,10 +1551,10 @@ video {
 
 .nav a,
 .nav li {
-  pointer-events: auto;
+  pointer-events: auto !important;
 }
 
 html {
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth !important;
+  -webkit-overflow-scrolling: touch !important;
 }
