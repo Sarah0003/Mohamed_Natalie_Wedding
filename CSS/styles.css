@@ -1,7 +1,7 @@
-section {
+/* section {
   overflow: visible;
 
-}
+} */
 
 section .container-fluid {
   display: flex;
@@ -1541,7 +1541,7 @@ video.lazy-video::-webkit-media-controls-play-button {
   /* padding: px 0; */
 }
 
-html, body {
+/* html, body {
   overflow-x: hidden;
 }
 
@@ -1569,4 +1569,4 @@ html {
 
 .lazy-video {
   scroll-behavior: smooth !important;
-}
+} */
