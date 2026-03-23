@@ -1619,7 +1619,7 @@ video.lazy-video::-webkit-media-controls-overlay-play-button,
 video.lazy-video::-webkit-media-controls-play-button {
   display: none !important;
 }
-
+/* 
 .video2 , .video7{
 margin-top: -2px;
-}
+} */
