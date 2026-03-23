@@ -915,7 +915,7 @@ video {
 @media (min-width: 320px) and (max-width: 480px) {
 
   .rsvp img {
-    width: 55%;
+    width: 60%;
   }
 
   .rsvp {
@@ -1127,7 +1127,7 @@ video {
 @media (min-width: 576px) {
 
   .rsvp img {
-    width: 55%;
+    width: 60%;
   }
 
   .rsvp {
