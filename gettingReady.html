@@ -133,25 +133,17 @@
 
        const videos = document.querySelectorAll("video.lazy-video");
 
-       // ✅ iPhone autoplay unlock (LIGHTWEIGHT FIX)
+       // iOS autoplay unlock (lightweight)
        let unlocked = false;
 
        function unlockVideos() {
          if (unlocked) return;
-
-         const firstVideo = document.querySelector("video.lazy-video");
-
+         const firstVideo = videos[0];
          if (firstVideo) {
            firstVideo.muted = true;
-           firstVideo.setAttribute("playsinline", "");
-
-           firstVideo.play()
-             .then(() => firstVideo.pause())
-             .catch(() => {});
+           firstVideo.play().then(() => firstVideo.pause()).catch(() => {});
          }
-
          unlocked = true;
-
          document.removeEventListener("touchstart", unlockVideos);
          document.removeEventListener("click", unlockVideos);
        }
@@ -161,31 +153,38 @@
        });
        document.addEventListener("click", unlockVideos);
 
-       // ✅ SMART VIDEO LOADING + PLAY
+       // Improved video loading + delayed play for iOS stability
        const observer = new IntersectionObserver((entries) => {
          entries.forEach(entry => {
            const video = entry.target;
            const source = video.querySelector("source");
 
            if (entry.isIntersecting) {
-
-             // Load only when needed
+             // Lazy load source if needed
              if (source.dataset.src && !source.src) {
                source.src = source.dataset.src;
                video.load();
              }
 
-             video.play().catch(() => {});
+             // Delay play slightly → helps iOS first-interaction freeze
+             setTimeout(() => {
+               const playPromise = video.play();
+               if (playPromise !== undefined) {
+                 playPromise.catch(() => {});
+               }
+             }, 140); // 140–200 ms usually sweet spot
+
            } else {
              video.pause();
+             // video.currentTime = 0; // optional: reset to start when out of view
            }
          });
        }, {
-         threshold: 0.6
+         threshold: 0.25, // lower = starts earlier, less jank
+         rootMargin: "100px 0px" // start loading a bit before visible
        });
 
        videos.forEach(video => observer.observe(video));
-
      });
    </script>
   <script src="JS/index.js"></script>
