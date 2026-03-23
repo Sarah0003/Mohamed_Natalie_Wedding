@@ -10,81 +10,149 @@
   <link rel="stylesheet" href="https://use.typekit.net/pgw1dpn.css">
   <link rel="stylesheet" href="CSS/styles.css">
 
- 
+  <style>
+    /* Critical iOS scroll & touch fixes */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      /* momentum scrolling fix */
+      touch-action: manipulation;
+      /* helps first touch responsiveness */
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    video.lazy-video {
+      pointer-events: none;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .nav {
+      position: fixed;
+      top: 2px;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      transition: all 0.3s ease;
+    }
+
+    .nav.scrolled {
+      top: 0;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    section .container-fluid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+    }
+
+    section .container-fluid .row {
+      margin: 0;
+      width: 100%;
+    }
+
+    section .container-fluid .row .col-sm-12 {
+      padding: 0;
+    }
+
+    section .container-fluid .row .col-sm-12 video {
+      width: 100%;
+      display: block;
+      margin: 0;
+    }
+
+    /* Your existing nav / font / button styles remain here... */
+    /* ... paste your full nav, media queries, .button, .sec_1_link etc. below ... */
+
+    /* Keep your existing video controls hiding rules */
+    video.lazy-video::-webkit-media-controls,
+    video.lazy-video::-webkit-media-controls-enclosure,
+    video.lazy-video::-webkit-media-controls-panel,
+    video.lazy-video::-webkit-media-controls-start-playback-button,
+    video.lazy-video::-webkit-media-controls-overlay-play-button,
+    video.lazy-video::-webkit-media-controls-play-button {
+      display: none !important;
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- START SECTION 1 -->
-    <section id="sec_1">
-      <div class="container-fluid video-container">
-        <div class="row video">
+  <!-- START SECTION 1 -->
+  <section id="sec_1">
+    <div class="container-fluid video-container">
+      <div class="row video">
+        <div class="col-sm-12 col-xl-12 sec_1_video position-relative">
 
-          <div class="col-sm-12 col-xl-12 sec_1_video position-relative">
-            <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
-              <source src="Videos/Dets/details01.mp4" type="video/mp4">
-            </video>
-            <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
-              <source src="Videos/Dets/details02.mp4" type="video/mp4">
-            </video>
-            <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
-              <source src="Videos/Dets/details03.mp4" type="video/mp4">
-            </video>
+          <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
+            <source src="Videos/Dets/details01.mp4" type="video/mp4">
+          </video>
+          <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
+            <source src="Videos/Dets/details02.mp4" type="video/mp4">
+          </video>
+          <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
+            <source data-src="Videos/Dets/details03.mp4" type="video/mp4">
+          </video>
+          <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
+            <source src="Videos/Dets/details04.mp4" type="video/mp4">
+          </video>
+          <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
+            <source data-src="Videos/Dets/details05.mp4" type="video/mp4">
+          </video>
+          <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
+            <source data-src="Videos/Dets/details06.mp4" type="video/mp4">
+          </video>
+          <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
+            <source data-src="Videos/Dets/details07.mp4" type="video/mp4">
+          </video>
 
-            <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
-              <source src="Videos/Dets/details04.mp4" type="video/mp4">
-            </video>
-            <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
-              <source src="Videos/Dets/details05.mp4" type="video/mp4">
-            </video>
-            <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
-              <source src="Videos/Dets/details06.mp4" type="video/mp4">
-            </video>
-            <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
-              <source src="Videos/Dets/details07.mp4" type="video/mp4">
-            </video>
-            <div class="nav">
-              <ul class="navbar-nav">
-                <div class="navItems firstList">
-                  <li class="nav-item">
-                    <a class="nav-link active" data-page="index.html" aria-current="page" href="index.html">HOME</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-page="ourStory.html" href="ourStory.html">OUR STORY</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-page="details.html" href="details.html">DETAILS</a>
-                  </li>
-                </div>
+          <div class="nav">
+            <ul class="navbar-nav">
+              <div class="navItems firstList">
+                <li class="nav-item"><a class="nav-link active" href="index.html">HOME</a></li>
+                <li class="nav-item"><a class="nav-link" href="ourStory.html">OUR STORY</a></li>
+                <li class="nav-item"><a class="nav-link" href="details.html">DETAILS</a></li>
+              </div>
 
-                <div class="navItems middleList">
-                  <li class="nav-item navbar-brand-item">
-                    <a class="navbar-brand nav-icon" href="index.html"><img src="images/nav_icon.png" alt="" /></a>
-                  </li>
-                </div>
+              <div class="navItems middleList">
+                <li class="nav-item navbar-brand-item">
+                  <a class="navbar-brand nav-icon" href="index.html">
+                    <img src="images/nav_icon.png" alt="">
+                  </a>
+                </li>
+              </div>
 
-                <div class="navItems lastList">
-                  <li class="nav-item extra-link">
-                    <a class="nav-link" data-page="thingsToDo.html" href="thingsToDo.html">THINGS TO DO</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-page="gettingReady.html" href="gettingReady.html">GETTING READY</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-page="RSVP.html" href="RSVP.html">RSVP</a>
-                  </li>
-                </div>
-
-              </ul>
-              <div class="clearFix"></div>
-
-            </div>
+              <div class="navItems lastList">
+                <li class="nav-item extra-link"><a class="nav-link" href="thingsToDo.html">THINGS TO DO</a></li>
+                <li class="nav-item"><a class="nav-link" href="gettingReady.html">GETTING READY</a></li>
+                <li class="nav-item"><a class="nav-link" href="RSVP.html">RSVP</a></li>
+              </div>
+            </ul>
+            <div class="clearFix"></div>
           </div>
-
 
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
   <!-- SCRIPTS -->
   <script>
@@ -92,25 +160,17 @@
 
       const videos = document.querySelectorAll("video.lazy-video");
 
-      // ✅ iPhone autoplay unlock (LIGHTWEIGHT FIX)
+      // iOS autoplay unlock (lightweight)
       let unlocked = false;
 
       function unlockVideos() {
         if (unlocked) return;
-
-        const firstVideo = document.querySelector("video.lazy-video");
-
+        const firstVideo = videos[0];
         if (firstVideo) {
           firstVideo.muted = true;
-          firstVideo.setAttribute("playsinline", "");
-
-          firstVideo.play()
-            .then(() => firstVideo.pause())
-            .catch(() => {});
+          firstVideo.play().then(() => firstVideo.pause()).catch(() => {});
         }
-
         unlocked = true;
-
         document.removeEventListener("touchstart", unlockVideos);
         document.removeEventListener("click", unlockVideos);
       }
@@ -120,31 +180,38 @@
       });
       document.addEventListener("click", unlockVideos);
 
-      // ✅ SMART VIDEO LOADING + PLAY
+      // Improved video loading + delayed play for iOS stability
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           const video = entry.target;
           const source = video.querySelector("source");
 
           if (entry.isIntersecting) {
-
-            // Load only when needed
+            // Lazy load source if needed
             if (source.dataset.src && !source.src) {
               source.src = source.dataset.src;
               video.load();
             }
 
-            video.play().catch(() => {});
+            // Delay play slightly → helps iOS first-interaction freeze
+            setTimeout(() => {
+              const playPromise = video.play();
+              if (playPromise !== undefined) {
+                playPromise.catch(() => {});
+              }
+            }, 140); // 140–200 ms usually sweet spot
+
           } else {
             video.pause();
+            // video.currentTime = 0; // optional: reset to start when out of view
           }
         });
       }, {
-        threshold: 0.6
+        threshold: 0.25, // lower = starts earlier, less jank
+        rootMargin: "100px 0px" // start loading a bit before visible
       });
 
       videos.forEach(video => observer.observe(video));
-
     });
   </script>
 
