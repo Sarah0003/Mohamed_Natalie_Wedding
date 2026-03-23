@@ -10,105 +10,81 @@
   <link rel="stylesheet" href="https://use.typekit.net/pgw1dpn.css">
   <link rel="stylesheet" href="CSS/styles.css">
 
-  <style>
-    /* 🔥 Performance boost */
-    video {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      will-change: transform;
-    }
-
-    .video-container {
-      overflow: hidden;
-    }
-  </style>
+ 
 </head>
 
 <body>
 
-  <!-- START SECTION -->
-  <section id="sec_1">
-    <div class="container-fluid video-container">
-      <div class="row video">
+    <!-- START SECTION 1 -->
+    <section id="sec_1">
+      <div class="container-fluid video-container">
+        <div class="row video">
 
-        <div class="col-12 sec_1_video position-relative">
+          <div class="col-sm-12 col-xl-12 sec_1_video position-relative">
+            <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
+              <source src="Videos/Dets/details01.mp4" type="video/mp4">
+            </video>
+            <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
+              <source src="Videos/Dets/details02.mp4" type="video/mp4">
+            </video>
+            <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
+              <source data-src="Videos/Dets/details03.mp4" type="video/mp4">
+            </video>
 
-          <!-- ✅ ALL videos use data-src ONLY -->
-          <!-- ❌ no autoplay -->
-          <!-- ✅ muted + playsinline -->
+            <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
+              <source src="Videos/Dets/details04.mp4" type="video/mp4">
+            </video>
+            <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
+              <source data-src="Videos/Dets/details05.mp4" type="video/mp4">
+            </video>
+            <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
+              <source data-src="Videos/Dets/details06.mp4" type="video/mp4">
+            </video>
+            <video class="lazy-video" autoplay loop muted playsinline webkit-playsinline>
+              <source data-src="Videos/Dets/details07.mp4" type="video/mp4">
+            </video>
+            <div class="nav">
+              <ul class="navbar-nav">
+                <div class="navItems firstList">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-page="index.html" aria-current="page" href="index.html">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-page="ourStory.html" href="ourStory.html">OUR STORY</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-page="details.html" href="details.html">DETAILS</a>
+                  </li>
+                </div>
 
-          <video class="lazy-video" muted playsinline preload="none">
-            <source data-src="Videos/Dets/details01.mp4" type="video/mp4">
-          </video>
+                <div class="navItems middleList">
+                  <li class="nav-item navbar-brand-item">
+                    <a class="navbar-brand nav-icon" href="index.html"><img src="images/nav_icon.png" alt="" /></a>
+                  </li>
+                </div>
 
-          <video class="lazy-video" muted playsinline preload="none">
-            <source data-src="Videos/Dets/details02.mp4" type="video/mp4">
-          </video>
+                <div class="navItems lastList">
+                  <li class="nav-item extra-link">
+                    <a class="nav-link" data-page="thingsToDo.html" href="thingsToDo.html">THINGS TO DO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-page="gettingReady.html" href="gettingReady.html">GETTING READY</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-page="RSVP.html" href="RSVP.html">RSVP</a>
+                  </li>
+                </div>
 
-          <video class="lazy-video" muted playsinline preload="none">
-            <source data-src="Videos/Dets/details03.mp4" type="video/mp4">
-          </video>
+              </ul>
+              <div class="clearFix"></div>
 
-          <video class="lazy-video" muted playsinline preload="none">
-            <source data-src="Videos/Dets/details04.mp4" type="video/mp4">
-          </video>
-
-          <video class="lazy-video" muted playsinline preload="none">
-            <source data-src="Videos/Dets/details05.mp4" type="video/mp4">
-          </video>
-
-          <video class="lazy-video" muted playsinline preload="none">
-            <source data-src="Videos/Dets/details06.mp4" type="video/mp4">
-          </video>
-
-          <video class="lazy-video" muted playsinline preload="none">
-            <source data-src="Videos/Dets/details07.mp4" type="video/mp4">
-          </video>
-
-          <!-- NAV -->
-          <div class="nav">
-            <ul class="navbar-nav">
-
-              <div class="navItems firstList">
-                <li class="nav-item">
-                  <a class="nav-link active" data-page="index.html" href="index.html">HOME</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-page="ourStory.html" href="ourStory.html">OUR STORY</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-page="details.html" href="details.html">DETAILS</a>
-                </li>
-              </div>
-
-              <div class="navItems middleList">
-                <li class="nav-item navbar-brand-item">
-                  <a class="navbar-brand nav-icon" href="index.html">
-                    <img src="images/nav_icon.png" alt="">
-                  </a>
-                </li>
-              </div>
-
-              <div class="navItems lastList">
-                <li class="nav-item extra-link">
-                  <a class="nav-link" data-page="thingsToDo.html" href="thingsToDo.html">THINGS TO DO</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-page="gettingReady.html" href="gettingReady.html">GETTING READY</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-page="RSVP.html" href="RSVP.html">RSVP</a>
-                </li>
-              </div>
-
-            </ul>
+            </div>
           </div>
+
 
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <!-- SCRIPTS -->
   <script>
