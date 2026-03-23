@@ -1607,7 +1607,7 @@ section .container-fluid .row .col-sm-12 {
 section .container-fluid .row .col-sm-12 video {
   width: 100%;
   display: block;
-  margin: 0;
+  margin: -2px;
 }
 
 /* Keep your existing video controls hiding rules */
