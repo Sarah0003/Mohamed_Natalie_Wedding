@@ -913,7 +913,9 @@ video {
 
 /* Very small mobile devices (320px to 480px) */
 @media (min-width: 320px) and (max-width: 480px) {
-
+.video2 , .video7{
+  margin-top: -2px;
+}
   section .container-fluid {
     display: flex;
     justify-content: center;
