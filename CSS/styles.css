@@ -1554,10 +1554,19 @@ video {
   pointer-events: auto !important;
 }
 
+.lazy-video {
+  pointer-events: none !important;
+}
+
+video {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
 html {
   scroll-behavior: smooth !important;
 }
 
-html video{
+.lazy-video {
   scroll-behavior: smooth !important;
 }
