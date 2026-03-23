@@ -128,70 +128,66 @@
     </div>
   </section>
   <!-- END SECTION 1 -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let lazyVideos = document.querySelectorAll("video.lazy-video");
+   <script>
+     document.addEventListener("DOMContentLoaded", function () {
 
-      let observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            let video = entry.target;
-            let source = video.querySelector("source");
-            if (source.dataset.src) {
-              source.src = source.dataset.src;
-              video.load(); // Load and play the video
-            }
-            observer.unobserve(video);
-          }
-        });
-      });
+       const videos = document.querySelectorAll("video.lazy-video");
 
-      lazyVideos.forEach(video => {
-        observer.observe(video);
-      });
-    });
+       // ✅ iPhone autoplay unlock (LIGHTWEIGHT FIX)
+       let unlocked = false;
 
+       function unlockVideos() {
+         if (unlocked) return;
 
-    // =========================
-    // ✅ ADD THIS PART BELOW
-    // =========================
-    let videosUnlocked = false;
+         const firstVideo = document.querySelector("video.lazy-video");
 
-    function unlockVideos() {
-    if (videosUnlocked) return;
+         if (firstVideo) {
+           firstVideo.muted = true;
+           firstVideo.setAttribute("playsinline", "");
 
-    const videos = document.querySelectorAll("video.lazy-video");
+           firstVideo.play()
+             .then(() => firstVideo.pause())
+             .catch(() => {});
+         }
 
-    videos.forEach(video => {
-    video.muted = true;
-    video.setAttribute("muted", "");
-    video.setAttribute("playsinline", "");
+         unlocked = true;
 
-    const playPromise = video.play();
+         document.removeEventListener("touchstart", unlockVideos);
+         document.removeEventListener("click", unlockVideos);
+       }
 
-    if (playPromise !== undefined) {
-    playPromise
-    .then(() => {
-    video.pause(); // important
-    })
-    .catch(() => {});
-    }
-    });
+       document.addEventListener("touchstart", unlockVideos, {
+         passive: true
+       });
+       document.addEventListener("click", unlockVideos);
 
-    videosUnlocked = true;
+       // ✅ SMART VIDEO LOADING + PLAY
+       const observer = new IntersectionObserver((entries) => {
+         entries.forEach(entry => {
+           const video = entry.target;
+           const source = video.querySelector("source");
 
-    // remove listeners after first tap
-    document.removeEventListener("touchstart", unlockVideos);
-    document.removeEventListener("click", unlockVideos);
-    }
+           if (entry.isIntersecting) {
 
-    // listen for first tap
-    document.addEventListener("touchstart", unlockVideos, {
-    passive: true
-    });
-    document.addEventListener("click", unlockVideos);
+             // Load only when needed
+             if (source.dataset.src && !source.src) {
+               source.src = source.dataset.src;
+               video.load();
+             }
 
-  </script>
+             video.play().catch(() => {});
+           } else {
+             video.pause();
+           }
+         });
+       }, {
+         threshold: 0.6
+       });
+
+       videos.forEach(video => observer.observe(video));
+
+     });
+   </script>
   <script src="JS/index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

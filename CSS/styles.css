@@ -749,3 +749,23 @@ video.lazy-video::-webkit-media-controls-play-button {
 * {
   overflow-x: hidden;
 }
+
+.nav {
+  position: fixed;
+  top: 2px;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+
+  transition: all 0.3s ease;
+}
+
+.nav.scrolled {
+  background: rgba(255, 255, 255, 0.3);
+  /* white with opacity */
+  backdrop-filter: blur(10px);
+  /* 🔥 glass effect */
+  -webkit-backdrop-filter: blur(10px);
+
+  padding: 5px 0;
+}
