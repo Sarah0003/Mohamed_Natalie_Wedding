@@ -124,30 +124,42 @@
             <source data-src="Videos/Dets/details07.mp4" type="video/mp4">
           </video>
 
-          <div class="nav">
-            <ul class="navbar-nav">
-              <div class="navItems firstList">
-                <li class="nav-item"><a class="nav-link active" href="index.html">HOME</a></li>
-                <li class="nav-item"><a class="nav-link" href="ourStory.html">OUR STORY</a></li>
-                <li class="nav-item"><a class="nav-link" href="details.html">DETAILS</a></li>
-              </div>
+       <div class="nav">
+         <ul class="navbar-nav">
+           <div class="navItems firstList">
+             <li class="nav-item">
+               <a class="nav-link active" data-page="index.html" aria-current="page" href="index.html">HOME</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" data-page="ourStory.html" href="ourStory.html">OUR STORY</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" data-page="details.html" href="details.html">DETAILS</a>
+             </li>
+           </div>
 
-              <div class="navItems middleList">
-                <li class="nav-item navbar-brand-item">
-                  <a class="navbar-brand nav-icon" href="index.html">
-                    <img src="images/nav_icon.png" alt="">
-                  </a>
-                </li>
-              </div>
+           <div class="navItems middleList">
+             <li class="nav-item navbar-brand-item">
+               <a class="navbar-brand nav-icon" href="index.html"><img src="images/nav_icon.png" alt="" /></a>
+             </li>
+           </div>
 
-              <div class="navItems lastList">
-                <li class="nav-item extra-link"><a class="nav-link" href="thingsToDo.html">THINGS TO DO</a></li>
-                <li class="nav-item"><a class="nav-link" href="gettingReady.html">GETTING READY</a></li>
-                <li class="nav-item"><a class="nav-link" href="RSVP.html">RSVP</a></li>
-              </div>
-            </ul>
-            <div class="clearFix"></div>
-          </div>
+           <div class="navItems lastList">
+             <li class="nav-item extra-link">
+               <a class="nav-link" data-page="thingsToDo.html" href="thingsToDo.html">THINGS TO DO</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" data-page="gettingReady.html" href="gettingReady.html">GETTING READY</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" data-page="RSVP.html" href="RSVP.html">RSVP</a>
+             </li>
+           </div>
+
+         </ul>
+         <div class="clearFix"></div>
+
+       </div>
 
         </div>
       </div>
@@ -156,6 +168,9 @@
 
   <!-- SCRIPTS -->
   <script>
+
+
+    
     document.addEventListener("DOMContentLoaded", function () {
 
       const videos = document.querySelectorAll("video.lazy-video");
@@ -214,8 +229,7 @@
       videos.forEach(video => observer.observe(video));
     });
   </script>
-
-  <script src="JS/index.js"></script>
+ <script src="JS/index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

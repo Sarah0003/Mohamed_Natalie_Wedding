@@ -1538,35 +1538,6 @@ video.lazy-video::-webkit-media-controls-play-button {
   /* 🔥 glass effect */
   -webkit-backdrop-filter: blur(10px);
 
-  /* padding: px 0; */
 }
 
-/* html, body {
-  overflow-x: hidden;
-}
 
-video {
-  display: block;
-}
-
-.nav a,
-.nav li {
-  pointer-events: auto !important;
-}
-
-.lazy-video {
-  pointer-events: none !important;
-}
-
-video {
-  user-select: none !important;
-  -webkit-user-select: none !important;
-}
-
-html {
-  scroll-behavior: smooth !important;
-}
-
-.lazy-video {
-  scroll-behavior: smooth !important;
-} */
