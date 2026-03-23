@@ -1556,5 +1556,8 @@ video {
 
 html {
   scroll-behavior: smooth !important;
-  -webkit-overflow-scrolling: touch !important;
+}
+
+html video{
+  scroll-behavior: smooth !important;
 }
